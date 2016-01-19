@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="list_title_bar_background">#999999</color>
+    <color name="list_title_bar_text">#000000</color>
+    <color name="list_row_main_text">#ffffff</color>
+    <color name="list_row_sub_text">#808183</color>
+    <color name="list_row_background">#000000</color>
+    <color name="input_field_title_text">#ffffff</color>
+    <color name="input_field_background">#ffffff</color>
+    <color name="input_field_text">#000000</color>
+    <color name="input_field_title_background">#000000</color>
+    <color name="divider">#555555</color>
+    
+</resources>

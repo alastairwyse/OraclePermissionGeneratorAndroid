@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for the settings activity, used to display and modify the general settings of the application.  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/list_title_bar_background" 
+    >
+    
+    <TextView
+        android:id="@+id/settings_header" 
+        style="@style/ActivityTitleBar"
+        android:text="@string/settings_header_text"
+        >
+    </TextView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:background="@color/list_row_background" 
+        >
+    
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:background="@color/list_row_background" 
+            >
+            
+            <TextView
+                android:id="@+id/settings_default_object_owner_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/settings_default_object_owner_field_title_text"
+                >
+            </TextView>
+            
+            <EditText
+                android:id="@+id/settings_default_object_owner_field" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/InputField"
+                android:hint="@string/settings_default_object_owner_field_hint_text"
+                android:maxLength="30"
+                android:layout_marginBottom="12dip"
+                >
+            </EditText>
+    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+            
+            <Button
+                android:id="@+id/settings_save_button" 
+                style="@style/StandardButton"
+                android:text="@string/settings_save_button_text"
+                android:layout_marginTop="8dip"
+                android:onClick="SaveButtonOnClickListener"
+                >
+            </Button>
+            
+        </LinearLayout>
+    
+    </ScrollView>    
+        
+</LinearLayout>

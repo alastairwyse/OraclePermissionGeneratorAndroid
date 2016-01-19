@@ -1,0 +1,76 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- Style for EditText views used as text input fields -->
+    <style name="InputField">
+        <item name="android:background">@drawable/textfield_search_empty_default</item>
+        <item name="android:textColor">@color/input_field_text</item>
+        <item name="android:inputType">text</item>
+        <item name="android:padding">@dimen/input_field_padding</item>
+        <item name="android:layout_marginLeft">@dimen/input_left_right_margin</item>
+        <item name="android:layout_marginRight">@dimen/input_left_right_margin</item>
+    </style>
+    
+    <!-- Style for TextView views used as titles to text input fields -->
+    <style name="InputFieldTitle">
+        <item name="android:layout_height">@dimen/input_field_title_height</item>
+        <item name="android:textSize">@dimen/input_field_title_text_size</item>
+        <item name="android:textColor">@color/input_field_title_text</item>
+        <item name="android:padding">@dimen/input_field_title_padding</item>
+        <item name="android:background">@color/input_field_title_background</item>
+    </style>
+        
+    <!-- Default horizontal divider used for vertically arranged items (e.g. in input and settings screens) -->
+    <style name="HorizontalDivider">
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:background">@color/divider</item>
+        <item name="android:layout_marginTop">@dimen/divider_margin</item>
+        <item name="android:layout_marginBottom">@dimen/divider_margin</item>
+    </style>
+    
+    <!-- Default TextView used as a title bar in activities -->
+    <style name="ActivityTitleBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/list_title_bar_height</item>
+        <item name="android:textSize">@dimen/list_title_bar_text_size</item>
+        <item name="android:textColor">@color/list_title_bar_text</item>
+        <item name="android:padding">@dimen/list_header_padding</item>
+    </style>
+    
+    <!-- Default style for buttons -->
+    <style name="StandardButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/button_left_right_padding</item>
+        <item name="android:paddingRight">@dimen/button_left_right_padding</item>
+    </style>
+    
+    <!-- Default style for ListViews -->
+    <style name="StandardListView">
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:background">@color/list_row_background</item>
+        <item name="android:choiceMode">none</item>
+        <item name="android:smoothScrollbar">false</item>
+        <item name="android:divider">@color/divider</item>
+        <item name="android:dividerHeight">@dimen/divider_height</item>
+        <item name="android:fadingEdgeLength">1dip</item>
+    </style>
+    
+</resources>

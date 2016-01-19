@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item
+        android:id="@+id/object_list_activity_menu_refresh"
+        android:icon="@drawable/ic_menu_refresh"
+        android:orderInCategory="0"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/object_list_activity_refresh_menu_text"
+        />
+    <item
+        android:id="@+id/object_list_activity_menu_generate_script"
+        android:icon="@drawable/ic_menu_compose"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/object_list_activity_generate_script_menu_text"
+        />
+    <item
+        android:id="@+id/object_list_activity_menu_role_to_user_mappings"
+        android:icon="@drawable/ic_menu_allfriends"
+        android:orderInCategory="2"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/object_list_activity_role_to_user_mappings_menu_text"
+        />
+    <item
+        android:id="@+id/object_list_activity_menu_settings"
+        android:icon="@drawable/ic_menu_preferences"
+        android:orderInCategory="3"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/object_list_activity_settings_menu_text"
+        />
+    <item
+        android:id="@+id/object_list_activity_menu_connection_settings"
+        android:icon="@drawable/ic_menu_preferences"
+        android:orderInCategory="4"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/object_list_activity_settings_connection_settings_text"
+        />
+    
+</menu>

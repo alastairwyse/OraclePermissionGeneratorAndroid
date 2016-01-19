@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for the add role to user map activity, used to add new role to user mappings -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/list_title_bar_background" 
+    >
+    
+    <TextView
+        android:id="@+id/add_role_to_user_map_header" 
+        style="@style/ActivityTitleBar"
+        android:text="@string/add_role_to_user_map_header_text"
+        >
+    </TextView>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:background="@color/list_row_background" 
+        >
+    
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:background="@color/list_row_background" 
+            >
+            
+            <TextView
+                android:id="@+id/add_role_to_user_map_role_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/add_role_to_user_map_role_field_title_text"
+                >
+            </TextView>
+            
+            <EditText
+                android:id="@+id/add_role_to_user_map_role_field" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/InputField"
+                android:hint="@string/add_role_to_user_map_role_field_hint_text"
+                android:maxLength="30"
+                android:layout_marginBottom="12dip"
+                >
+            </EditText>
+    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+            
+            <TextView
+                android:id="@+id/add_role_to_user_map_user_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/add_role_to_user_map_user_field_title_text"
+                >
+            </TextView>
+            
+            <EditText
+                android:id="@+id/add_role_to_user_map_user_field" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/InputField"
+                android:hint="@string/add_role_to_user_map_user_field_hint_text"
+                android:maxLength="30"
+                android:layout_marginBottom="12dip"
+                >
+            </EditText>
+    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+            
+            <Button
+                android:id="@+id/add_role_to_user_map_add_mapping_button" 
+                style="@style/StandardButton"
+                android:text="@string/add_role_to_user_map_add_mapping_button_text"
+                android:layout_marginTop="8dip"
+                android:onClick="AddMappingButtonOnClickListener"
+                >
+            </Button>
+            
+        </LinearLayout>
+    
+    </ScrollView>
+    
+</LinearLayout>

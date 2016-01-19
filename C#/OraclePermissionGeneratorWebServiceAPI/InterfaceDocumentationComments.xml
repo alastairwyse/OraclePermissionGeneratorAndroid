@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <assembly>
+    <name>OraclePermissionGeneratorWebServiceAPI</name>
+  </assembly>
+  <members>
+    <member name="T:OraclePermissionGeneratorWebServiceAPI.ITrackingDataLogger">
+      <summary>
+        Defines methods to log tracking information regarding consuming of the web service.
+      </summary>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ITrackingDataLogger.Log(System.DateTime,System.String,System.String,OraclePermissionGeneratorWebServiceAPI.Containers.Location,System.Byte[])">
+      <summary>
+        Logs tracking information.
+      </summary>
+      <param name="timeStamp">The time the web service method was called.</param>
+      <param name="userIdentifier">The identifier of the user who called the method.</param>
+      <param name="methodName">The name of the method that was called.</param>
+      <param name="location">The physical location of the consumer of the web service.</param>
+      <param name="ipV4Address">The IPV4 address of the device consuming the web service.</param>
+    </member>
+    <member name="T:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi">
+      <summary>
+        Defines methods which expose the data interface layer of the Oracle Permission Generator application over a web service.
+      </summary>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.AddUser(System.String)">
+      <summary>
+        Adds a user into the data layer.
+      </summary>
+      <param name="userIdentifier">A unique identifier for the user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.GetDefaultObjectOwner(System.String,System.String)">
+      <summary>
+        Gets the default object owner for new object permission sets.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The default object owner.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.SetDefaultObjectOwner(System.String,System.String,System.String)">
+      <summary>
+        Sets the default object owner for new object permission sets.
+      </summary>
+      <param name="defaultObjectOwner">The default object owner.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.GetObjectTypes(System.String,System.String)">
+      <summary>
+        Returns a list of all object types in the data layer.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The object types in the data layer.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.GetRoles(System.String,System.String)">
+      <summary>
+        Returns a list of all roles in the data layer.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The roles in the data layer.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.GetPermissions(System.String,System.String,System.String)">
+      <summary>
+        Returns a list of all available permissions for the specified object in the data layer.
+      </summary>
+      <param name="objectType">The object to return the permission for.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The available permissions in the data layer.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.GetPermissionsForObject(System.String,System.String,System.String,System.String)">
+      <summary>
+        Returns a list of all permissions on the specified object assigned to the specified role in the data layer.
+        <remarks>Note this method had to be renamed from the GetPermissions() method in the OraclePermissionGeneratorDataInterfaceLayer class, as WCF does not allow method overloading.</remarks>
+      </summary>
+      <param name="objectName">The object to return the permissions for.</param>
+      <param name="role">The role to return the permissions for.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The permissions for the object and role in the data layer.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.GetMasterRoleToUserMapCollection(System.String,System.String)">
+      <summary>
+        Returns the master list of role to user mappings in the data layer.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The master list of role to user mappings.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.AddObjectPermissionSet(System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String)">
+      <summary>
+        Adds an Oracle object permission set to the data layer.
+      </summary>
+      <param name="objectName">The name of the object.</param>
+      <param name="objectType">The type of the object.</param>
+      <param name="objectOwner">The user who owns the object.</param>
+      <param name="addFlag">Specifies whether statements should be generated to add this object when generating Oracle scripts.</param>
+      <param name="removeFlag">Specifies whether statements should be generated to remove this object when generating Oracle scripts.</param>
+      <param name="objectPermissions">The set of permissions for the object.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.RemoveObjectPermissionSet(System.String,System.String,System.String)">
+      <summary>
+        Removes an Oracle object permission set from the data layer.
+      </summary>
+      <param name="objectName">The name of the object.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.ObjectNameValidate(System.String,System.String,System.String)">
+      <summary>
+        Checks whether the inputted object name is valid in the data model.
+      </summary>
+      <param name="objectName">The object name.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The result of the validation.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.ObjectTypeValidate(System.String,System.String,System.String)">
+      <summary>
+        Checks whether the inputted object type is valid in the data model.
+      </summary>
+      <param name="objectType">The object type.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The result of the validation.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.ObjectOwnerValidate(System.String,System.String,System.String)">
+      <summary>
+        Checks whether the inputted object owner is valid in the data model.
+      </summary>
+      <param name="objectOwner">The object owner.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The result of the validation.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.GetObjects(System.String,System.String)">
+      <summary>
+        Returns a list of all defined Oracle objects.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>A list of all defined Oracle objects.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.SetAddFlag(System.String,System.Boolean,System.String,System.String)">
+      <summary>
+        Sets the add flag of the specified Oracle object.
+      </summary>
+      <param name="objectName">The name of the object to set the add flag for.</param>
+      <param name="addFlagValue">The value of the add flag.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.SetRemoveFlag(System.String,System.Boolean,System.String,System.String)">
+      <summary>
+        Sets the remove flag of the specified Oracle object.
+      </summary>
+      <param name="objectName">The name of the object to set the remove flag for.</param>
+      <param name="removeFlagValue">The value of the remove flag.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.AddPermission(System.String,System.String,System.String,System.String,System.String)">
+      <summary>
+        Adds a new permission to a specified Oracle object and role.
+      </summary>
+      <param name="objectName">The name of the object to add the permission for.</param>
+      <param name="role">The role to apply the permission to.</param>
+      <param name="permission">The permission to add.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.RemovePermission(System.String,System.String,System.String,System.String,System.String)">
+      <summary>
+        Removes a permission from a specified Oracle object and role.
+      </summary>
+      <param name="objectName">The name of the object to remove the permission from.</param>
+      <param name="role">The role to remove the permission from.</param>
+      <param name="permission">The permission to remove.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.RoleGetReferencingObjects(System.String,System.String,System.String)">
+      <summary>
+        Returns a list of names of objects which reference the inputted role.
+      </summary>
+      <param name="role">The name of the role.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>A list of objects which reference the specified role.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.AddRoleToUserMap(System.String,System.String,System.String,System.String)">
+      <summary>
+        Adds a role to user mapping to the master lookup list.
+      </summary>
+      <param name="role">The name of the role.</param>
+      <param name="user">The name of the user.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.RemoveRoleToUserMap(System.String,System.String,System.String,System.String)">
+      <summary>
+        Removes a role to user mapping from the master lookup list.
+      </summary>
+      <param name="role">The name of the role.</param>
+      <param name="user">The name of the user.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.RoleToUserMapValidate(System.String,System.String,System.String,System.String)">
+      <summary>
+        Checks whether the inputted role to user map is valid in the data model.
+      </summary>
+      <param name="role">The name of the role.</param>
+      <param name="user">The name of the user.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The result of the validation.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.CreatePrivilegeScript(System.String,System.Boolean,System.String,System.String)">
+      <summary>
+        Generates an Oracle privilege script.
+      </summary>
+      <param name="scriptType">The type of script to generate.</param>
+      <param name="generateRevokeStatements">Whether revoke statments should be included in the script.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The Oracle privilege script.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.ISoapWebServiceApi.CreateSynonymScript(System.String,System.String,System.String)">
+      <summary>
+        Generates an Oracle synonym script.
+      </summary>
+      <param name="scriptType">The type of script to generate.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The Oracle synonym script.</returns>
+    </member>
+    <member name="T:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi">
+      <summary>
+        Defines methods which expose the data interface layer of the Oracle Permission Generator application over a REST web service.
+      </summary>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.AddUser(System.String)">
+      <summary>
+        Adds a user into the data layer.
+      </summary>
+      <param name="userIdentifier">A unique identifier for the user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.GetDefaultObjectOwner(System.String,System.String)">
+      <summary>
+        Gets the default object owner for new object permission sets.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The default object owner.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.SetDefaultObjectOwner(System.String,System.String,System.String)">
+      <summary>
+        Sets the default object owner for new object permission sets.
+      </summary>
+      <param name="defaultObjectOwner">The default object owner.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.GetObjectTypes(System.String,System.String)">
+      <summary>
+        Returns a list of all object types in the data layer.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns></returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.GetRoles(System.String,System.String)">
+      <summary>
+        Returns a list of all roles in the data layer.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The roles in the data layer.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.GetPermissions(System.String,System.String,System.String)">
+      <summary>
+        Returns a list of all available permissions for the specified object in the data layer.
+      </summary>
+      <param name="objectType">The object to return the permission for.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The available permissions in the data layer.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.GetPermissionsForObject(System.String,System.String,System.String,System.String)">
+      <summary>
+        Returns a list of all permissions on the specified object assigned to the specified role in the data layer.
+        Note this method had to be renamed from the GetPermissions() method in the OraclePermissionGeneratorDataInterfaceLayer class, as WCF does not allow method overloading.
+      </summary>
+      <param name="objectName">The object to return the permissions for.</param>
+      <param name="role">The role to return the permissions for.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The permissions for the object and role in the data layer.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.GetMasterRoleToUserMapCollection(System.String,System.String)">
+      <summary>
+        Returns the master list of role to user mappings in the data layer.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The master list of role to user mappings.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.AddObjectPermissionSet(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Collections.Generic.List{OraclePermissionGeneratorWebServiceAPI.Containers.RoleToPermissionMap},System.String,System.String)">
+      <summary>
+        Adds an Oracle object permission set to the data layer.
+      </summary>
+      <param name="objectName">The name of the object.</param>
+      <param name="objectType">The type of the object.</param>
+      <param name="objectOwner">The user who owns the object.</param>
+      <param name="addFlag">Specifies whether statements should be generated to add this object when generating Oracle scripts.</param>
+      <param name="removeFlag">Specifies whether statements should be generated to remove this object when generating Oracle scripts.</param>
+      <param name="objectPermissions">The set of permissions for the object.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.RemoveObjectPermissionSet(System.String,System.String,System.String)">
+      <summary>
+        Removes an Oracle object permission set from the data layer.
+      </summary>
+      <param name="objectName">The name of the object.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.ObjectNameValidate(System.String,System.String,System.String)">
+      <summary>
+        Checks whether the inputted object name is valid in the data model.
+      </summary>
+      <param name="objectName">The object name.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The result of the validation.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.ObjectTypeValidate(System.String,System.String,System.String)">
+      <summary>
+        Checks whether the inputted object type is valid in the data model.
+      </summary>
+      <param name="objectType">The object type.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The result of the validation.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.ObjectOwnerValidate(System.String,System.String,System.String)">
+      <summary>
+        Checks whether the inputted object owner is valid in the data model.
+      </summary>
+      <param name="objectOwner">The object owner.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The result of the validation.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.GetObjects(System.String,System.String)">
+      <summary>
+        Returns a list of all defined Oracle objects.
+      </summary>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>A list of all defined Oracle objects.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.SetAddFlag(System.String,System.Boolean,System.String,System.String)">
+      <summary>
+        Sets the add flag of the specified Oracle object.
+      </summary>
+      <param name="objectName">The name of the object to set the add flag for.</param>
+      <param name="addFlagValue">The value of the add flag.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.SetRemoveFlag(System.String,System.Boolean,System.String,System.String)">
+      <summary>
+        Sets the remove flag of the specified Oracle object.
+      </summary>
+      <param name="objectName">The name of the object to set the remove flag for.</param>
+      <param name="removeFlagValue">The value of the remove flag.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.AddPermission(System.String,System.String,System.String,System.String,System.String)">
+      <summary>
+        Adds a new permission to a specified Oracle object and role.
+      </summary>
+      <param name="objectName">The name of the object to add the permission for.</param>
+      <param name="role">The role to apply the permission to.</param>
+      <param name="permission">The permission to add.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.RemovePermission(System.String,System.String,System.String,System.String,System.String)">
+      <summary>
+        Removes a permission from a specified Oracle object and role.
+      </summary>
+      <param name="objectName">The name of the object to remove the permission from.</param>
+      <param name="role">The role to remove the permission from.</param>
+      <param name="permission">The permission to remove.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.RoleGetReferencingObjects(System.String,System.String,System.String)">
+      <summary>
+        Returns a list of names of objects which reference the inputted role.
+      </summary>
+      <param name="role">The name of the role.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>A list of objects which reference the specified role.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.AddRoleToUserMap(System.String,System.String,System.String,System.String)">
+      <summary>
+        Adds a role to user mapping to the master lookup list.
+      </summary>
+      <param name="role">The name of the role.</param>
+      <param name="user">The name of the user.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.RemoveRoleToUserMap(System.String,System.String,System.String,System.String)">
+      <summary>
+        Removes a role to user mapping from the master lookup list.
+      </summary>
+      <param name="role">The name of the role.</param>
+      <param name="user">The name of the user.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.RoleToUserMapValidate(System.String,System.String,System.String,System.String)">
+      <summary>
+        Checks whether the inputted role to user map is valid in the data model.
+      </summary>
+      <param name="role">The name of the role.</param>
+      <param name="user">The name of the user.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The result of the validation.</returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.CreatePrivilegeScript(System.String,System.Boolean,System.String,System.String)">
+      <summary>
+        Generates an Oracle privilege script.
+      </summary>
+      <param name="scriptType">The type of script to generate.</param>
+      <param name="generateRevokeStatements">Whether revoke statments should be included in the script.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns></returns>
+    </member>
+    <member name="M:OraclePermissionGeneratorWebServiceAPI.IRestWebServiceApi.CreateSynonymScript(System.String,System.String,System.String)">
+      <summary>
+        Generates an Oracle synonym script.
+      </summary>
+      <param name="scriptType">The type of script to generate.</param>
+      <param name="authenticationContext">The authentication context of the web service consumer or user.</param>
+      <param name="trackingData">Tracking information of the web service consumer or user.</param>
+      <returns>The Oracle synonym script.</returns>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for the select script activity which is used to select a script for the application to generate -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/list_row_background" 
+    >
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:background="@color/list_row_background" 
+        >
+    
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:background="@color/list_row_background" 
+            >
+        
+            <TextView
+                android:id="@+id/select_script_header" 
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_title_bar_height"
+                android:textSize="@dimen/list_title_bar_text_size" 
+                android:text="@string/select_script_header_text"
+                android:textColor="@color/list_title_bar_text"
+                android:padding="@dimen/list_header_padding" 
+                android:background="@color/list_title_bar_background"
+                >
+            </TextView>
+            
+            <TextView
+                android:id="@+id/select_script_privilege_rollout_field"
+                android:layout_height="@dimen/select_script_row_field_height"
+                android:layout_width="@dimen/select_script_row_field_width"
+                android:fontFamily="serif"
+                android:text="@string/select_script_privilege_rollout_field_text"
+                android:textColor="@color/list_row_main_text"
+                android:textSize="@dimen/list_row_main_text_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:onClick="PrivilegeRolloutFieldOnClickListener"
+                >
+            </TextView>
+        
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:background="@color/divider" 
+                android:layout_marginTop="@dimen/divider_margin"
+                android:layout_marginBottom="@dimen/divider_margin" 
+                >
+            </View>
+            
+            <TextView
+                android:id="@+id/select_script_synonym_rollout_field"
+                android:layout_height="@dimen/select_script_row_field_height"
+                android:layout_width="@dimen/select_script_row_field_width"
+                android:fontFamily="serif"
+                android:text="@string/select_script_synonym_rollout_field_text"
+                android:textColor="@color/list_row_main_text"
+                android:textSize="@dimen/list_row_main_text_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:onClick="SynonymRolloutFieldOnClickListener"
+                >
+            </TextView>
+        
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:background="@color/divider" 
+                android:layout_marginTop="@dimen/divider_margin"
+                android:layout_marginBottom="@dimen/divider_margin" 
+                >
+            </View>
+        
+            <TextView
+                android:id="@+id/select_script_privilege_rollback_field"
+                android:layout_height="@dimen/select_script_row_field_height"
+                android:layout_width="@dimen/select_script_row_field_width"
+                android:fontFamily="serif"
+                android:text="@string/select_script_privilege_rollback_field_text"
+                android:textColor="@color/list_row_main_text"
+                android:textSize="@dimen/list_row_main_text_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:onClick="PrivilegeRollbackFieldOnClickListener"
+                >
+            </TextView>
+        
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:background="@color/divider" 
+                android:layout_marginTop="@dimen/divider_margin"
+                android:layout_marginBottom="@dimen/divider_margin" 
+                >
+            </View>
+        
+            <TextView
+                android:id="@+id/select_script_synonym_rollback_field"
+                android:layout_height="@dimen/select_script_row_field_height"
+                android:layout_width="@dimen/select_script_row_field_width"
+                android:fontFamily="serif"
+                android:text="@string/select_script_synonym_rollback_field_text"
+                android:textColor="@color/list_row_main_text"
+                android:textSize="@dimen/list_row_main_text_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:onClick="SynonymRollbackFieldOnClickListener"
+                >
+            </TextView>
+        
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:background="@color/divider" 
+                android:layout_marginTop="@dimen/divider_margin"
+                android:layout_marginBottom="@dimen/divider_margin" 
+                >
+            </View>
+    
+        </LinearLayout>    
+            
+    </ScrollView>        
+            
+</LinearLayout>

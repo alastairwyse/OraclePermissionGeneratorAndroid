@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Oracle Permission Generator</string>
+    <string name="object_list_activity_settings_menu_text">Settings</string>
+    <string name="object_list_activity_refresh_menu_text">Refresh</string>
+    <string name="object_list_activity_role_to_user_mappings_menu_text">Roles / Users</string>
+    <string name="object_list_activity_settings_connection_settings_text">Connection</string>
+    <string name="object_list_activity_generate_script_menu_text">Scripts</string>
+    <string name="oracle_object_list_object_name_header_text">Object</string>
+    <string name="oracle_object_list_add_header_text">Add</string>
+    <string name="oracle_object_list_remove_header_text">Rem</string>
+    <string name="object_list_activity_context_menu_add_object_text">Add Object</string>
+    <string name="object_list_activity_context_menu_remove_object_text">Remove Object</string>
+    <string name="add_object_header_text">Add Object</string>
+    <string name="add_object_object_name_field_title_text">Object Name</string>
+    <string name="add_object_object_name_field_hint_text">The name of the object</string>
+    <string name="add_object_object_type_field_title_text">Object Type</string>
+    <string name="add_object_object_owner_field_title_text">Object Owner</string>
+    <string name="add_object_object_owner_field_hint_text">The owner of the object</string>
+    <string name="add_object_add_object_button_text">Add Object</string>
+    <string name="select_role_header_text">Select Role</string>
+    <string name="set_permissions_header_text">Set Permissions</string>
+    <string name="add_role_to_user_map_header_text">Add Role to User Mapping</string>
+    <string name="add_role_to_user_map_role_field_title_text">Role</string>
+    <string name="add_role_to_user_map_role_field_hint_text">The role</string>
+    <string name="add_role_to_user_map_user_field_title_text">User</string>
+    <string name="add_role_to_user_map_user_field_hint_text">The user</string>
+    <string name="add_role_to_user_map_add_mapping_button_text">Add Mapping</string>
+    <string name="role_to_user_map_list_role_header_text">Role</string>
+    <string name="role_to_user_map_list_user_header_text">User</string>
+    <string name="role_to_user_map_add_mapping_button_text">Add Mapping</string>
+    <string name="role_to_user_map_activity_context_menu_add_mapping_text">Add Mapping</string>
+    <string name="role_to_user_map_activity_context_menu_remove_mapping_text">Remove Mapping</string>
+    <string name="settings_header_text">Settings</string>
+    <string name="settings_default_object_owner_field_title_text">Default Object Owner</string>
+    <string name="settings_default_object_owner_field_hint_text">The default owner for objects</string>
+    <string name="settings_save_button_text">Save</string>
+    <string name="connection_settings_header_text">Connection Settings</string>
+    <string name="connection_settings_user_identifier_field_title_text">User Identifier</string>
+    <string name="connection_settings_user_identifier_field_hint_text">The unique identifier for the user</string>
+    <string name="connection_settings_remote_data_model_type_field_title_text">Data Service Connection Type</string>
+    <string name="connection_settings_soap_data_service_location_field_title_text">SOAP Data Service Location</string>
+    <string name="connection_settings_soap_data_service_location_field_hint_text">SOAP data service network location:port</string>
+    <string name="connection_settings_rest_data_service_location_field_title_text">REST Data Service Location</string>
+    <string name="connection_settings_rest_data_service_location_field_hint_text">REST data service network location:port</string>
+    <string name="connection_settings_save_button_text">Save</string>
+    <string name="select_script_header_text">Select Script Type</string>
+    <string name="select_script_privilege_rollout_field_text">Privilege Rollout</string>
+    <string name="select_script_synonym_rollout_field_text">Synonym Rollout</string>
+    <string name="select_script_privilege_rollback_field_text">Privilege Rollback</string>
+    <string name="select_script_synonym_rollback_field_text">Synonym Rollback</string>
+
+</resources>

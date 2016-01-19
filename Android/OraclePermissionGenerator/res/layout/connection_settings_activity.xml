@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for the connection settings activity, used to display and modify the connection settings of the application.  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/list_title_bar_background" 
+    >
+
+    <TextView
+        android:id="@+id/connection_settings_header" 
+        style="@style/ActivityTitleBar"
+        android:text="@string/connection_settings_header_text"
+        >
+    </TextView>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:background="@color/list_row_background" 
+        >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:background="@color/list_row_background" 
+            >
+            
+            <TextView
+                android:id="@+id/connection_settings_user_identifier_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/connection_settings_user_identifier_field_title_text"
+                >
+            </TextView>
+            
+            <EditText
+                android:id="@+id/connection_settings_user_identifier_field" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/InputField"
+                android:hint="@string/connection_settings_user_identifier_field_hint_text"
+                android:maxLength="100"
+                android:layout_marginBottom="12dip"
+                >
+            </EditText>
+    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+    
+            <TextView
+                android:id="@+id/connection_settings_remote_data_model_type_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/connection_settings_remote_data_model_type_field_title_text"
+                >
+            </TextView>
+            
+            <Spinner
+                android:id="@+id/connection_settings_remote_data_model_type_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                style="@style/InputField"
+                android:layout_marginBottom="12dip"
+                >
+            </Spinner>
+                    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+
+            <TextView
+                android:id="@+id/connection_settings_soap_data_service_location_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/connection_settings_soap_data_service_location_field_title_text"
+                >
+            </TextView>
+            
+            <EditText
+                android:id="@+id/connection_settings_soap_data_service_location_field" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/InputField"
+                android:hint="@string/connection_settings_soap_data_service_location_field_hint_text"
+                android:maxLength="100"
+                android:layout_marginBottom="12dip"
+                >
+            </EditText>
+    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+            
+            <TextView
+                android:id="@+id/connection_settings_rest_data_service_location_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/connection_settings_rest_data_service_location_field_title_text"
+                >
+            </TextView>
+            
+            <EditText
+                android:id="@+id/connection_settings_rest_data_service_location_field" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/InputField"
+                android:hint="@string/connection_settings_rest_data_service_location_field_hint_text"
+                android:maxLength="100"
+                android:layout_marginBottom="12dip"
+                >
+            </EditText>
+    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+            
+            <Button
+                android:id="@+id/connection_settings_save_button" 
+                style="@style/StandardButton"
+                android:text="@string/connection_settings_save_button_text"
+                android:layout_marginTop="8dip"
+                android:onClick="SaveButtonOnClickListener"
+                >
+            </Button>
+            
+        </LinearLayout>
+    
+    </ScrollView>
+    
+</LinearLayout>

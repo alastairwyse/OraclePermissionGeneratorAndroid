@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for a row in the ListView in the set permissions activity -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/list_row_padding" 
+    >
+
+    <CheckBox 
+        android:id="@+id/set_permissions_row_set_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:onClick="onPermissionListRowCheckBoxClicked"
+        >
+    </CheckBox>
+
+    <TextView
+        android:id="@+id/set_permissions_row_permission_name_field"
+        android:layout_height="@dimen/list_row_main_text_field_height"
+        android:layout_width="@dimen/list_row_main_text_field_width"
+        android:layout_toStartOf="@id/set_permissions_row_set_checkbox"
+        android:fontFamily="serif"
+        android:textColor="@color/list_row_main_text"
+        android:textSize="@dimen/list_row_main_text_size"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        >
+    </TextView>
+    
+</RelativeLayout>

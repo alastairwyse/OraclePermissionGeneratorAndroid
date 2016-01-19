@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definition of MAPPING groups -->
+    <xs:element name="ROLE">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="30" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    <xs:element name="USER">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="30" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    <xs:element name="OBJECT_TYPE">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="30" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    <xs:element name="OBJECT_OWNER">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="30" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    <xs:element name="PERMISSION">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="30" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    <xs:element name="DEFAULT_OBJECT_OWNER">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="30" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    <xs:group name="MAPPING_ROLE_TO_USER">
+      <xs:sequence>
+        <xs:element ref="ROLE" minOccurs="1" maxOccurs="1" />
+        <xs:element ref="USER" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+    </xs:group>
+    <xs:group name="MAPPING_OBJECT_TYPE_TO_PERMISSION">
+      <xs:sequence>
+        <xs:element ref="OBJECT_TYPE" minOccurs="1" maxOccurs="1" />
+        <xs:element ref="PERMISSION" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+    </xs:group>
+    
+  <xs:element name="ORACLE_PERMISSION_GENERATOR_CONFIG" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DEFAULT_OBJECT_OWNER" minOccurs="0" maxOccurs="1" />
+        <xs:element name="ROLE_TO_USER_MAP" minOccurs="1" maxOccurs="1" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAPPINGS" minOccurs="1" maxOccurs="1" >
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="MAPPING" minOccurs="0" maxOccurs="unbounded" >
+                      <xs:complexType>
+                        <xs:group ref="MAPPING_ROLE_TO_USER">
+                        </xs:group>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OBJECT_TYPE_TO_PERMISSION_MAP"  minOccurs="1" maxOccurs="1" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAPPINGS" minOccurs="1" maxOccurs="1" >
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="MAPPING" minOccurs="0" maxOccurs="unbounded" >
+                      <xs:complexType>
+                        <xs:group ref="MAPPING_OBJECT_TYPE_TO_PERMISSION">
+                        </xs:group>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ORACLE_OBJECT_PERMISSION_SETS" minOccurs="1" maxOccurs="1" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORACLE_OBJECT_PERMISSION_SET" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OBJECT_NAME" minOccurs="1" maxOccurs="1" >
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1"/>
+                          <xs:maxLength value="30"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element ref="OBJECT_TYPE" minOccurs="1" maxOccurs="1" />
+                    <xs:element ref="OBJECT_OWNER" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ADD_FLAG" minOccurs="1" maxOccurs="1" >
+                      <xs:simpleType>
+                        <xs:restriction base="xs:boolean">
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="REMOVE_FLAG" minOccurs="1" maxOccurs="1" >
+                      <xs:simpleType>
+                        <xs:restriction base="xs:boolean">
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="OBJECT_PERMISSIONS" minOccurs="1" maxOccurs="1" >
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="OBJECT_PERMISSION" minOccurs="0" maxOccurs="unbounded" >
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="ROLE" minOccurs="1" maxOccurs="1" />
+                                <xs:element ref="PERMISSION" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

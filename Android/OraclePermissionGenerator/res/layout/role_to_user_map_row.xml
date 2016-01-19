@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for a row in the ListView in the role to user map activity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" 
+    android:longClickable="true"
+    >
+    
+    <TextView
+        android:id="@+id/role_to_user_map_list_row_role_field" 
+        android:layout_width="0px"
+        android:layout_height="@dimen/role_to_user_map_list_row_field_height"
+        android:layout_weight="0.5"
+        android:fontFamily="serif"
+        android:textColor="@color/list_row_main_text"
+        android:textSize="@dimen/list_row_main_text_size"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        >
+    </TextView>
+
+    <View
+        android:id="@+id/role_to_user_map_list_row_field_separator"
+        android:layout_width="@dimen/divider_height"
+        android:layout_height="fill_parent"
+        android:visibility="visible"
+        android:background="@color/divider"
+        >
+    </View>
+    
+    <TextView
+        android:id="@+id/role_to_user_map_list_row_user_field" 
+        android:layout_width="0px"
+        android:layout_height="@dimen/role_to_user_map_list_row_field_height"
+        android:layout_weight="0.5"
+        android:fontFamily="serif"
+        android:textColor="@color/list_row_main_text"
+        android:textSize="@dimen/list_row_main_text_size"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        >
+    </TextView>
+
+</LinearLayout>

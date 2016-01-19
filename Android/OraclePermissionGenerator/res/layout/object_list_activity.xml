@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for the object list activity which is the main activity in the application -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_top_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/list_title_bar_background"
+    tools:context=".ObjectListActivity"
+    >
+    
+    <!-- Below are 2 invisible CheckBoxes, used to align the text boxes to show the ListView header text for the 'Add' and 'Remove' CheckBoxes in the Listview -->
+    <CheckBox
+        android:id="@+id/object_list_title_bar_invisible_remove_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/list_row_padding"
+        >
+    </CheckBox>
+    
+    <CheckBox
+        android:id="@+id/object_list_title_bar_invisible_add_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_toLeftOf="@id/object_list_title_bar_invisible_remove_checkbox"
+        android:layout_alignParentTop="true"
+        >
+    </CheckBox>
+    
+    <TextView
+        android:id="@+id/oracle_object_list_object_name_header" 
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/list_title_bar_height"
+        android:textSize="@dimen/list_title_bar_text_size" 
+        android:text="@string/oracle_object_list_object_name_header_text"
+        android:textColor="@color/list_title_bar_text"
+        android:padding="@dimen/list_header_padding" 
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/oracle_object_list_remove_header"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/list_title_bar_height"
+        android:layout_alignLeft="@id/object_list_title_bar_invisible_remove_checkbox"
+        android:layout_alignRight="@id/object_list_title_bar_invisible_remove_checkbox"
+        android:layout_alignTop="@id/oracle_object_list_object_name_header"
+        android:padding="@dimen/list_header_padding"
+        android:text="@string/oracle_object_list_remove_header_text"
+        android:textSize="@dimen/list_title_bar_text_size"
+        android:textColor="@color/list_title_bar_text"
+        android:gravity="center"
+        >
+    </TextView>
+    
+    <TextView
+        android:id="@+id/oracle_object_list_add_header"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/list_title_bar_height"
+        android:layout_alignLeft="@id/object_list_title_bar_invisible_add_checkbox"
+        android:layout_alignRight="@id/object_list_title_bar_invisible_add_checkbox"
+        android:layout_alignTop="@id/oracle_object_list_object_name_header"
+        android:padding="@dimen/list_header_padding"
+        android:text="@string/oracle_object_list_add_header_text"
+        android:textSize="@dimen/list_title_bar_text_size"
+        android:textColor="@color/list_title_bar_text"
+        android:gravity="center"
+        >
+    </TextView>
+
+    <ListView
+        android:id="@+id/oracle_object_list"
+        style="@style/StandardListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/oracle_object_list_object_name_header"
+        android:longClickable="true"
+        >
+    </ListView>
+    
+    <View 
+        android:id="@+id/oracle_object_list_fill_space"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/list_row_background"
+        android:layout_below="@id/oracle_object_list"
+        android:longClickable="true"
+        >
+    </View>
+
+</RelativeLayout>

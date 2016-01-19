@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- Custom dimensions -->
+    <dimen name="list_row_main_text_size">18sp</dimen>
+    <dimen name="list_row_sub_text_size">12sp</dimen>
+    <dimen name="list_row_padding">3dip</dimen>
+    <dimen name="list_header_padding">2dip</dimen>
+    <dimen name="list_row_main_text_field_height">24dip</dimen>
+    <dimen name="list_row_main_text_field_width">230dip</dimen>
+    <dimen name="list_row_sub_text_field_height">18dip</dimen>
+    <dimen name="list_row_sub_text_field_width">230dip</dimen>
+    <dimen name="list_title_bar_text_size">12sp</dimen>
+    <dimen name="list_title_bar_height">20dip</dimen>
+    <dimen name="input_field_title_height">20dip</dimen>
+    <dimen name="input_field_title_text_size">12sp</dimen>
+    <dimen name="input_field_title_padding">2dip</dimen>
+    <dimen name="input_field_padding">4dip</dimen>
+    <dimen name="input_field_rounding">2dip</dimen>
+    <dimen name="input_left_right_margin">4dip</dimen>
+    <dimen name="divider_height">1px</dimen>
+    <dimen name="divider_margin">0dip</dimen>
+    <dimen name="role_list_row_role_name_field_height">24dip</dimen>
+    <dimen name="role_list_row_role_name_field_width">230dip</dimen>
+    <dimen name="role_to_user_map_list_row_field_height">24dip</dimen>
+    <dimen name="select_script_row_field_height">24dip</dimen>
+    <dimen name="select_script_row_field_width">230dip</dimen>
+    <dimen name="button_left_right_padding">15dip</dimen>
+</resources>

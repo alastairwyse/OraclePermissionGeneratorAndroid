@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for the role to user map activity which shows all role to user mappings defined in the application -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/list_row_background"
+    >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:background="@color/list_row_background"
+        >
+    
+        <TextView
+            android:id="@+id/role_to_user_map_list_role_header" 
+            android:layout_width="0px"
+            android:layout_height="@dimen/list_title_bar_height"
+            android:layout_weight="0.5"
+            android:background="@color/list_title_bar_background"
+            android:textSize="@dimen/list_title_bar_text_size" 
+            android:text="@string/role_to_user_map_list_role_header_text"
+            android:textColor="@color/list_title_bar_text"
+            android:padding="@dimen/list_header_padding" 
+            >
+        </TextView>
+    
+        <TextView
+            android:id="@+id/role_to_user_map_list_user_header" 
+            android:layout_width="0px"
+            android:layout_height="@dimen/list_title_bar_height"
+            android:layout_weight="0.5"
+            android:background="@color/list_title_bar_background"
+            android:textSize="@dimen/list_title_bar_text_size" 
+            android:text="@string/role_to_user_map_list_user_header_text"
+            android:textColor="@color/list_title_bar_text"
+            android:padding="@dimen/list_header_padding" 
+            >
+        </TextView>
+    
+    </LinearLayout>
+    
+    <ListView
+        android:id="@+id/role_to_user_map_list"
+        style="@style/StandardListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:longClickable="true"
+        >
+    </ListView>
+    
+    <View 
+        android:id="@+id/role_to_user_map_fill_space"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/list_row_background"
+        android:longClickable="true"
+        >
+    </View>
+    
+</LinearLayout>

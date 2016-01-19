@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/role_to_user_map_activity_context_menu_add_mapping"
+        android:orderInCategory="0"
+        android:title="@string/role_to_user_map_activity_context_menu_add_mapping_text"
+        />
+    <item
+        android:id="@+id/role_to_user_map_activity_context_menu_remove_mapping"
+        android:orderInCategory="1"
+        android:title="@string/role_to_user_map_activity_context_menu_remove_mapping_text"
+        />
+
+</menu>

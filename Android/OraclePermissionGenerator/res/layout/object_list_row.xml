@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for a row in the main ListView in the object list activity -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/list_row_padding" 
+    android:longClickable="true"
+    >
+ 
+    <CheckBox 
+        android:id="@+id/object_list_row_remove_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:onClick="onObjectListRowRemoveCheckBoxClicked"
+        >
+    </CheckBox>
+    
+    <CheckBox
+        android:id="@+id/object_list_row_add_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/object_list_row_remove_checkbox"
+        android:onClick="onObjectListRowAddCheckBoxClicked"
+        >
+    </CheckBox>
+
+    <TextView
+        android:id="@+id/object_list_row_object_name_field"
+        android:layout_height="@dimen/list_row_main_text_field_height"
+        android:layout_width="@dimen/list_row_main_text_field_width"
+        android:layout_toStartOf="@id/object_list_row_remove_checkbox"
+        android:fontFamily="serif"
+        android:textColor="@color/list_row_main_text"
+        android:textSize="@dimen/list_row_main_text_size"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/object_list_row_object_type_field"
+        android:layout_height="@dimen/list_row_sub_text_field_height"
+        android:layout_width="@dimen/list_row_sub_text_field_width"
+        android:layout_alignLeft="@id/object_list_row_object_name_field"
+        android:layout_below="@id/object_list_row_object_name_field"
+        android:fontFamily="sans"
+        android:textColor="@color/list_row_sub_text"
+        android:textSize="@dimen/list_row_sub_text_size"
+        >
+    </TextView>
+
+</RelativeLayout> 

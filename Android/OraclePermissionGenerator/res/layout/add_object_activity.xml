@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The layout for the add object activity used to add a new Oracle object into the application -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/list_title_bar_background" 
+    >
+
+    <TextView
+        android:id="@+id/add_object_header" 
+        style="@style/ActivityTitleBar"
+        android:text="@string/add_object_header_text"
+        >
+    </TextView>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:background="@color/list_row_background" 
+        >
+    
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:background="@color/list_row_background" 
+            >
+    
+            <TextView
+                android:id="@+id/add_object_object_name_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/add_object_object_name_field_title_text"
+                >
+            </TextView>
+            
+            <EditText
+                android:id="@+id/add_object_object_name_field" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/InputField"
+                android:hint="@string/add_object_object_name_field_hint_text"
+                android:maxLength="30"
+                android:layout_marginBottom="12dip"
+                >
+            </EditText>
+    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+    
+            <TextView
+                android:id="@+id/add_object_object_type_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/add_object_object_type_field_title_text"
+                >
+            </TextView>
+            
+            <Spinner
+                android:id="@+id/add_object_object_type_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                style="@style/InputField"
+                android:layout_marginBottom="12dip"
+                >
+            </Spinner>
+                    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+            
+            <TextView
+                android:id="@+id/add_object_object_owner_field_title" 
+                android:layout_width="match_parent"
+                style="@style/InputFieldTitle"
+                android:text="@string/add_object_object_owner_field_title_text"
+                >
+            </TextView>
+            
+            <EditText
+                android:id="@+id/add_object_object_owner_field" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/InputField"
+                android:hint="@string/add_object_object_owner_field_hint_text"
+                android:maxLength="30"
+                android:layout_marginBottom="12dip"
+                >
+            </EditText>
+    
+            <View
+                android:layout_width="match_parent"
+                style="@style/HorizontalDivider"
+                >
+            </View>
+            
+            <Button
+                android:id="@+id/add_object_add_object_button" 
+                style="@style/StandardButton"
+                android:text="@string/add_object_add_object_button_text"
+                android:layout_marginTop="8dip"
+                android:onClick="AddObjectButtonOnClickListener"
+                >
+            </Button>
+    
+        </LinearLayout>
+    
+    </ScrollView>
+    
+</LinearLayout>
