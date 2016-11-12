@@ -36,7 +36,10 @@ namespace OraclePermissionGeneratorWebServiceAPI
 
             // Create and start the service host
             using (FileTrackingDataLogger trackingDataLogger = new FileTrackingDataLogger(@"C:\Temp\"))
+            //using (AwsDynamoDbTrackingDataLogger trackingDataLogger = new AwsDynamoDbTrackingDataLogger("[access key id]", "[secret access key]"))
+            //using (AwsRedshiftTrackingDataLogger trackingDataLogger = new AwsRedshiftTrackingDataLogger("[redshift server location]", 5439, "[redshift server instance name]", "[user name]", "[password]"))
             {
+                //trackingDataLogger.Connect();
                 Dictionary<string, OraclePermissionGeneratorDataInterfaceLayer> userDataRespository = new Dictionary<string, OraclePermissionGeneratorDataInterfaceLayer>();
                 SoapWebServiceApi soapApiInstance = new SoapWebServiceApi(userDataRespository, trackingDataLogger);
                 RestWebServiceApi restApiInstance = new RestWebServiceApi(userDataRespository, trackingDataLogger);
@@ -78,6 +81,8 @@ namespace OraclePermissionGeneratorWebServiceAPI
                     restServiceHost.Close();
                     soapServiceHost.Close();
                 }
+
+                //trackingDataLogger.Disconnect();
             }
         }
     }

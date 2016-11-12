@@ -56,6 +56,12 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\packages\AWSSDK.Core.3.3.1\lib\net35\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DynamoDBv2">
+      <HintPath>..\packages\AWSSDK.DynamoDBv2.3.3.0.1\lib\net35\AWSSDK.DynamoDBv2.dll</HintPath>
+    </Reference>
     <Reference Include="GenericClassLibrary">
       <HintPath>..\Referenced Libraries\GenericClassLibrary.dll</HintPath>
     </Reference>
@@ -82,6 +88,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AwsDynamoDbTrackingDataLogger.cs" />
+    <Compile Include="AwsRedshiftTrackingDataLogger.cs.cs" />
     <Compile Include="FileTrackingDataLogger.cs" />
     <Compile Include="IRestWebServiceApi.cs" />
     <Compile Include="ISoapWebServiceApi.cs" />
@@ -95,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
