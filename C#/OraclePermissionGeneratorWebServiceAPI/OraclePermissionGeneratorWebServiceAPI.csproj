@@ -89,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AwsDynamoDbTrackingDataLogger.cs" />
-    <Compile Include="AwsRedshiftTrackingDataLogger.cs.cs" />
+    <Compile Include="AwsRedshiftTrackingDataLogger.cs" />
     <Compile Include="FileTrackingDataLogger.cs" />
     <Compile Include="IRestWebServiceApi.cs" />
     <Compile Include="ISoapWebServiceApi.cs" />

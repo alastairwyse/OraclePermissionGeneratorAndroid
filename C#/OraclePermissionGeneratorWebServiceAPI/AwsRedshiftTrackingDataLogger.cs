@@ -93,24 +93,24 @@ namespace OraclePermissionGeneratorWebServiceAPI
         /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="M:OraclePermissionGeneratorWebServiceAPI.ITrackingDataLogger.Log(System.DateTime,System.String,System.String,OraclePermissionGeneratorWebServiceAPI.Location,System.Byte[])"]/*'/>
         public void Log(DateTime timeStamp, string userIdentifier, string methodName, Containers.Location location, byte[] ipV4Address)
         {
-            // Use a dictionary to store the column name / column value pairs to be inserted into the table
-            Dictionary<String, String> columnValues = new Dictionary<String, String>();
+            // Use a list of tuples to store the column name / column value pairs to be inserted into the table
+            List<Tuple<String, String>> columnValues = new List<Tuple<String, String>>();
             // PostgreSQL requires 'zulu' postfix to specify UTC
-            columnValues.Add("time_stamp", WrapStringInSingleQuotes(timeStamp.ToString(redshiftDateStringFormat) + " zulu"));
-            columnValues.Add("user_id", WrapStringInSingleQuotes(userIdentifier));
-            columnValues.Add("method_name", WrapStringInSingleQuotes(methodName));
+            columnValues.Add(new Tuple<String, String>("time_stamp", WrapStringInSingleQuotes(timeStamp.ToString(redshiftDateStringFormat) + " zulu")));
+            columnValues.Add(new Tuple<String, String>("user_id", WrapStringInSingleQuotes(userIdentifier)));
+            columnValues.Add(new Tuple<String, String>("method_name", WrapStringInSingleQuotes(methodName)));
             if (location != null)
             {
-                columnValues.Add("latitude", location.Latitude.ToString());
-                columnValues.Add("longitude", location.Longitude.ToString());
-                columnValues.Add("seconds_since_update", location.SecondsSinceUpdate.ToString());
+                columnValues.Add(new Tuple<String, String>("latitude", location.Latitude.ToString()));
+                columnValues.Add(new Tuple<String, String>("longitude", location.Longitude.ToString()));
+                columnValues.Add(new Tuple<String, String>("seconds_since_update", location.SecondsSinceUpdate.ToString()));
             }
             if (ipV4Address != null)
             {
-                columnValues.Add("ip_addess_octet_1", ipV4Address[0].ToString());
-                columnValues.Add("ip_addess_octet_2", ipV4Address[1].ToString());
-                columnValues.Add("ip_addess_octet_3", ipV4Address[2].ToString());
-                columnValues.Add("ip_addess_octet_4", ipV4Address[3].ToString());
+                columnValues.Add(new Tuple<String, String>("ip_addess_octet_1", ipV4Address[0].ToString()));
+                columnValues.Add(new Tuple<String, String>("ip_addess_octet_2", ipV4Address[1].ToString()));
+                columnValues.Add(new Tuple<String, String>("ip_addess_octet_3", ipV4Address[2].ToString()));
+                columnValues.Add(new Tuple<String, String>("ip_addess_octet_4", ipV4Address[3].ToString()));
             }
 
             // Build the SQL insert statement
@@ -119,9 +119,9 @@ namespace OraclePermissionGeneratorWebServiceAPI
             insertStatementBuilder.Append(trackingDataTableName);
             insertStatementBuilder.Append(" ( ");
             Int32 currentColumnIndex = 1;
-            foreach(String currentColumnName in columnValues.Keys)
+            foreach(Tuple<String, String> currentColumnValue in columnValues)
             {
-                insertStatementBuilder.Append(currentColumnName);
+                insertStatementBuilder.Append(currentColumnValue.Item1);
                 if (currentColumnIndex < columnValues.Count)
                 {
                     insertStatementBuilder.Append(", ");
@@ -130,9 +130,9 @@ namespace OraclePermissionGeneratorWebServiceAPI
             }
             insertStatementBuilder.Append(")  VALUES  ( ");
             currentColumnIndex = 1;
-            foreach(String currentColumnValue in columnValues.Values)
+            foreach (Tuple<String, String> currentColumnValue in columnValues)
             {
-                insertStatementBuilder.Append(currentColumnValue);
+                insertStatementBuilder.Append(currentColumnValue.Item2);
                 if (currentColumnIndex < columnValues.Count)
                 {
                     insertStatementBuilder.Append(", ");
@@ -140,7 +140,7 @@ namespace OraclePermissionGeneratorWebServiceAPI
                 currentColumnIndex++;
             }
             insertStatementBuilder.Append(");");
-            
+
             // Execute the statement
             using (OdbcCommand command = connection.CreateCommand())
             {
