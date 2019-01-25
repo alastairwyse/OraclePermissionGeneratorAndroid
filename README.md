@@ -10,6 +10,6 @@ For a detailed analysis of the project including...
 * Comparison of the MVP pattern vs other common patterns/practices in Android
 * Analysis of implementing simple Android functionality across the full MVP and application stack
 
-...see http://www.oraclepermissiongenerator.net/oraclepermissiongeneratorandroid/
+...see http://www.alastairwyse.net/oraclepermissiongeneratorandroid/
 
-Javadoc documentation for the project is available at http://www.oraclepermissiongenerator.net/oraclepermissiongeneratorandroid/javadoc/
+Javadoc documentation for the project is available at http://www.alastairwyse.net/oraclepermissiongeneratorandroid/javadoc/
